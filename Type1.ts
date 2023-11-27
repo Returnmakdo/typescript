@@ -9,15 +9,45 @@ const playerMaker = (name: string): Player => ({
   name,
 });
 
-const myName = playerMaker("치영");
+const myName = playerMaker('치영');
 myName.age = 26;
 
 //////////////////////////////////////////////////////////////////////////////
 
 // Tuple
-const player: readonly [string, number, boolean] = ["치영", 12, false];
+const player: readonly [string, number, boolean] = ['치영', 12, false];
 
 // any
 const a: any[] = [1, 2, 3, 4];
 const b: any = true;
 console.log(a + b); // <-- 이게 가능해짐
+
+// unknown (api를 받을 떄 데이터가 어떤형식일 지 모를때 unknown으로 타입 선언해주고 분기처리 해줌)
+let response: unknown;
+
+if (typeof response === 'number') {
+  let answer = response + 1;
+}
+if (typeof response === 'string') {
+  let answer = response.toUpperCase();
+}
+
+// void -> dont return function
+function hello() {
+  console.log('x');
+}
+
+// never -> 절대 return 하지 않은 함수일 때
+function hi(): never {
+  throw new Error('xxx');
+}
+
+function hiii(name: string | number) {
+  if (typeof name === 'string') {
+    name; // string
+  } else if (typeof name === 'number') {
+    name; // number
+  } else {
+    name; // type이 올바르게 들어오지 않았을 경우
+  }
+}

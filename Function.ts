@@ -46,3 +46,15 @@ const push: Push = (config) => {
 //   path: '/home',
 //   state: 1,
 // });
+
+// polymorphism
+type SuperPrint = {
+  <T>(arr: T[]): T;
+};
+
+const superPrint: SuperPrint = (arr) => arr[0];
+
+const aa = superPrint([1, 2, 3, 4]);
+const bb = superPrint([true, false, true, true]);
+const cc = superPrint(['1', '2', '3', '4']);
+const dd = superPrint([1, 2, true, false, 'hello']);

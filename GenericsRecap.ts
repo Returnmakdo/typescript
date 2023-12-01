@@ -31,6 +31,13 @@ const chiyoung: Developer<{ favFood: string }> = {
   },
 };
 
+const ahnchiyoung: Developer<{ device: string }> = {
+  name: 'chiyoung',
+  extraInfo: {
+    device: 'mac',
+  },
+};
+
 const chi: Developer<null> = {
   name: 'chi',
   extraInfo: null,
